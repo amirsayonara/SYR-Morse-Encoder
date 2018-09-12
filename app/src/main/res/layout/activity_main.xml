@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/teks_input"
         android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
@@ -42,10 +42,10 @@
         android:layout_marginTop="28dp"
         android:text="Keluaran:"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText4" />
+        app:layout_constraintTop_toBottomOf="@+id/teks_input" />
 
     <EditText
-        android:id="@+id/editText5"
+        android:id="@+id/teks_output"
         android:layout_width="366dp"
         android:layout_height="wrap_content"
         android:layout_marginEnd="25dp"
@@ -66,9 +66,10 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:text="Kerjakan"
+        android:onClick="kerjakan"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editText5" />
+        app:layout_constraintTop_toBottomOf="@+id/teks_output" />
 
 </android.support.constraint.ConstraintLayout>
