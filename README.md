@@ -4,6 +4,4 @@
 
 Aplikasi pertama-ku dalam versi mobile berbasis Android. Tidak banyak fitur di dalamnya, hanya mengubah teks biasa menjadi sandi morse dan sebaliknya dengan pengaturan tanda custom dari pengguna. Berikut pratinjaunya:
 
-[![Pratinjau Aplikasi](https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot.png)](https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot.png 'Pratinjau Aplikasi')
-
-[![Pratinjau Aplikasi](https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot2.png)](https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot2.png 'Pratinjau Aplikasi')
+<p align="center"><img title="Pratinjau Aplikasi" width="300" src="https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot.png"> <img title="Pratinjau Aplikasi" width="300" src="https://github.com/amirsayonara/SYR-Morse-Encoder/blob/master/Screenshoot2.png"></p>
