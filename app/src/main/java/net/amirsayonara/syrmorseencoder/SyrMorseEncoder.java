@@ -1,9 +1,7 @@
 package net.amirsayonara.syrmorseencoder;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Set;
 
 public class SyrMorseEncoder {
     private Map data = new HashMap();
@@ -15,6 +13,7 @@ public class SyrMorseEncoder {
     private void reload() {
         for (int i=0; i<morse.length; i++) {
             data.put((char) (i + 65), morse[i].replace('1', titik.charAt(0)).replace('0', strip.charAt(0)));
+            data.put(morse[i].replace('1', titik.charAt(0)).replace('0', strip.charAt(0)), (char) (i + 65));
         }
     }
     public void setTitik(String titik) {
@@ -28,12 +27,21 @@ public class SyrMorseEncoder {
     }
     public String encode(String teks) {
         String tmp = "";teks=teks.toUpperCase();
-        Set alpha = data.keySet();
         for (int i=0; i<teks.length(); i++) {
-            if (alpha.contains(teks.charAt(i))) tmp += data.get(teks.charAt(i))+pemisah;
+            if (data.containsKey(teks.charAt(i))) tmp += data.get(teks.charAt(i))+pemisah;
             else if (teks.charAt(i)==' ') tmp += pemisah;
             else tmp += teks.charAt(i);
         }
         return tmp+pemisah;
+    }
+    public String decode(String teks) {
+        String tmp = "";
+        String[] t = teks.split(pemisah);
+        for (int i=0; i<t.length; i++) {
+            if (data.containsKey(t[i])) tmp += data.get(t[i]);
+            else if (t[i].equals("")) tmp += ' ';
+            else tmp += teks.charAt(i);
+        }
+        return tmp;
     }
 }

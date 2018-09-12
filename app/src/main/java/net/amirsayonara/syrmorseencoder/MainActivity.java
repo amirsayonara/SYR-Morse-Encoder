@@ -32,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
         morse.setPemisah(pemisah.getText().toString());
         EditText input = (EditText) findViewById(R.id.teks_input);
         EditText output = (EditText) findViewById(R.id.teks_output);
-        output.setText(morse.encode(input.getText().toString()));
+        if (this.mode=="encode") output.setText(morse.encode(input.getText().toString()));
+        else output.setText(morse.decode(input.getText().toString()));
     }
 }
