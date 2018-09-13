@@ -8,11 +8,12 @@ import android.widget.EditText;
 import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
+    SyrMorseEncoder morse = new SyrMorseEncoder();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ubah_mode(null);
+
     }
     public void ubah_mode(View view) {
         EditText input = (EditText) findViewById(R.id.teks_input);
@@ -73,7 +74,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void kerjakan(View view) {
-        SyrMorseEncoder morse = new SyrMorseEncoder();
         Switch pengaturan = findViewById(R.id.pengaturan);
         EditText titik = (EditText) findViewById(R.id.tandatitik);
         EditText strip = (EditText) findViewById(R.id.tandastrip);
