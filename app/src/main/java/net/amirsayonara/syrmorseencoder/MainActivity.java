@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ketik(View view) {
-        view.getClass();
+        Button b = (Button) view;
+        EditText input = (EditText) findViewById(R.id.teks_input);
+        input.setText(input.getText()+b.getText().toString());
     }
 
     public void kerjakan(View view) {

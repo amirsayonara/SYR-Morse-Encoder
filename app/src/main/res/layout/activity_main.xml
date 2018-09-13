@@ -201,6 +201,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="16dp"
                 android:text="•"
+                android:onClick="ketik"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/strip"
                 app:layout_constraintTop_toBottomOf="@+id/tandapemisah" />
@@ -213,6 +214,7 @@
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="16dp"
                 android:text="—"
+                android:onClick="ketik"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/pemisah"
                 app:layout_constraintTop_toBottomOf="@+id/tandapemisah" />
@@ -224,6 +226,7 @@
                 android:layout_marginEnd="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="16dp"
+                android:onClick="ketik"
                 android:text="/"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toEndOf="parent"
