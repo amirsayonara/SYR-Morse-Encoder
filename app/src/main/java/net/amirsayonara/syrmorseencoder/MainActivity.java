@@ -17,8 +17,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void ubah_mode(View view) {
-        if (this.mode=="encode") this.mode="decode";
-        else this.mode="encode";
+        EditText input = (EditText) findViewById(R.id.teks_input);
+        if (this.mode=="encode") {
+            this.mode="decode";
+            input.setTextIsSelectable(false);
+        } else this.mode="encode";
         Button btn = (Button) findViewById(R.id.button);
         Button t = (Button) findViewById(R.id.titik);
         Button s = (Button) findViewById(R.id.strip);
@@ -46,14 +49,20 @@ public class MainActivity extends AppCompatActivity {
     public void hapus(View view) {
         Button b = (Button) view;
         EditText input = (EditText) findViewById(R.id.teks_input);
-        EditText tmp = (EditText) findViewById(R.id.teks_output);
-        tmp.setText(String.valueOf(input.getSelectionStart()));
         if (b.getText().toString().equals("BCK")) {
             if (input.getText().toString().length()>0) {
                 int cur = input.getSelectionStart();
-                if (cur-1<0) cur = 1;
-                input.setText(input.getText().delete(cur-1, input.getSelectionEnd()));
-                input.setSelection(cur-1);
+                //if (cur-1<0) cur = 1;
+                try{
+                    if (input.getSelectionStart()==input.getSelectionEnd()) {
+                        input.setText(input.getText().delete(cur-1, input.getSelectionEnd()));
+                        input.setSelection(cur-1);
+                    } else {
+                        input.setText(input.getText().delete(cur, input.getSelectionEnd()));
+                        input.setSelection(cur);
+                    }
+                } catch (Exception e) {}
+
             }
         } else input.setText("");
     }
