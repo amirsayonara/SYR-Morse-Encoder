@@ -5,32 +5,35 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Switch;
 
 public class MainActivity extends AppCompatActivity {
-
-    String mode = "decode";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ubah_mode(null);
     }
-
     public void ubah_mode(View view) {
         EditText input = (EditText) findViewById(R.id.teks_input);
-        if (this.mode=="encode") {
-            this.mode="decode";
-            input.setShowSoftInputOnFocus(false);
-        } else {
-            this.mode="encode";
-            input.setShowSoftInputOnFocus(true);
-        }
         Button btn = (Button) findViewById(R.id.button);
         Button t = (Button) findViewById(R.id.titik);
         Button s = (Button) findViewById(R.id.strip);
         Button p = (Button) findViewById(R.id.pemisah);
-        btn.setText(this.mode);
-        t.setEnabled(!t.isEnabled());s.setEnabled(!s.isEnabled());p.setEnabled(!p.isEnabled());
+        Switch pengaturan = findViewById(R.id.pengaturan);
+        if (pengaturan.isChecked()) {
+            btn.setText("decode");
+            t.setEnabled(true);
+            s.setEnabled(true);
+            p.setEnabled(true);
+            input.setShowSoftInputOnFocus(false);
+        } else {
+            btn.setText("encode");
+            t.setEnabled(false);
+            s.setEnabled(false);
+            p.setEnabled(false);
+            input.setShowSoftInputOnFocus(true);
+        }
     }
 
     public void ketik(View view) {
@@ -55,7 +58,6 @@ public class MainActivity extends AppCompatActivity {
         if (b.getText().toString().equals("BCK")) {
             if (input.getText().toString().length()>0) {
                 int cur = input.getSelectionStart();
-                //if (cur-1<0) cur = 1;
                 try{
                     if (input.getSelectionStart()==input.getSelectionEnd()) {
                         input.setText(input.getText().delete(cur-1, input.getSelectionEnd()));
@@ -72,6 +74,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void kerjakan(View view) {
         SyrMorseEncoder morse = new SyrMorseEncoder();
+        Switch pengaturan = findViewById(R.id.pengaturan);
         EditText titik = (EditText) findViewById(R.id.tandatitik);
         EditText strip = (EditText) findViewById(R.id.tandastrip);
         EditText pemisah = (EditText) findViewById(R.id.tandapemisah);
@@ -80,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
         morse.setPemisah(pemisah.getText().toString());
         EditText input = (EditText) findViewById(R.id.teks_input);
         EditText output = (EditText) findViewById(R.id.teks_output);
-        if (this.mode=="encode") output.setText(morse.encode(input.getText().toString()));
+        if (!pengaturan.isChecked()) output.setText(morse.encode(input.getText().toString()));
         else output.setText(morse.decode(input.getText().toString()));
     }
 }
