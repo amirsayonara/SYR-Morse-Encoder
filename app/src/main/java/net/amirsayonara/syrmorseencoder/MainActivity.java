@@ -30,24 +30,31 @@ public class MainActivity extends AppCompatActivity {
     public void ketik(View view) {
         Button b = (Button) view;
         EditText input = (EditText) findViewById(R.id.teks_input);
+        int cur = input.getSelectionStart();
         if (b.getText().toString().equals("•")) {
             EditText t = (EditText) findViewById(R.id.tandatitik);
-            input.setText(input.getText()+t.getText().toString());
+            input.setText(input.getText().toString().substring(0, cur) + t.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
         } else if (b.getText().toString().equals("—")) {
             EditText s = (EditText) findViewById(R.id.tandastrip);
-            input.setText(input.getText() + s.getText().toString());
+            input.setText(input.getText().toString().substring(0, cur) + s.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
         } else {
             EditText p = (EditText) findViewById(R.id.tandapemisah);
-            input.setText(input.getText() + p.getText().toString());
-        }
+            input.setText(input.getText().toString().substring(0, cur) + p.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
+        } input.setSelection(cur+1);
     }
 
     public void hapus(View view) {
         Button b = (Button) view;
         EditText input = (EditText) findViewById(R.id.teks_input);
+        EditText tmp = (EditText) findViewById(R.id.teks_output);
+        tmp.setText(String.valueOf(input.getSelectionStart()));
         if (b.getText().toString().equals("BCK")) {
-            if (input.getText().toString().length()>0)
-                input.setText(input.getText().delete(input.getText().length()-1, input.getText().length()));
+            if (input.getText().toString().length()>0) {
+                int cur = input.getSelectionStart();
+                if (cur-1<0) cur = 1;
+                input.setText(input.getText().delete(cur-1, input.getSelectionEnd()));
+                input.setSelection(cur-1);
+            }
         } else input.setText("");
     }
 
