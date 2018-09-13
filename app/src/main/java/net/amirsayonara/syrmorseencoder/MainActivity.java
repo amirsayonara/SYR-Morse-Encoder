@@ -8,18 +8,27 @@ import android.widget.EditText;
 
 public class MainActivity extends AppCompatActivity {
 
-    String mode = "encode";
+    String mode = "decode";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ubah_mode(null);
     }
 
     public void ubah_mode(View view) {
         if (this.mode=="encode") this.mode="decode";
         else this.mode="encode";
         Button btn = (Button) findViewById(R.id.button);
+        Button t = (Button) findViewById(R.id.titik);
+        Button s = (Button) findViewById(R.id.strip);
+        Button p = (Button) findViewById(R.id.pemisah);
         btn.setText(this.mode);
+        t.setEnabled(!t.isEnabled());s.setEnabled(!s.isEnabled());p.setEnabled(!p.isEnabled());
+    }
+
+    public void ketik(View view) {
+        view.getClass();
     }
 
     public void kerjakan(View view) {
