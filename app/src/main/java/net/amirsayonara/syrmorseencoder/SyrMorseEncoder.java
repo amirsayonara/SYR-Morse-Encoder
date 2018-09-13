@@ -38,6 +38,10 @@ public class SyrMorseEncoder {
     }
     public String decode(String teks) {
         String tmp = "";
+        if (pemisah.equals("+")) {
+            teks = teks.replaceAll("\\+", "joif4f43g6aweu9w8u04u09a8");
+            this.pemisah = "joif4f43g6aweu9w8u04u09a8";
+        }
         String[] t = teks.split(pemisah);
         for (int i=0; i<t.length; i++) {
             if (data.containsKey(t[i])) tmp += data.get(t[i]);
