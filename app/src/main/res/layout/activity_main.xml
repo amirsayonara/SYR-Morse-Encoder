@@ -197,40 +197,82 @@
                 android:id="@+id/titik"
                 android:layout_width="44dp"
                 android:layout_height="34dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="16dp"
-                android:text="•"
+                android:layout_marginEnd="15dp"
+                android:layout_marginLeft="32dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="9dp"
                 android:onClick="ketik"
+                android:text="•"
                 android:textSize="12sp"
                 app:layout_constraintEnd_toStartOf="@+id/strip"
-                app:layout_constraintTop_toBottomOf="@+id/tandapemisah" />
+                app:layout_constraintStart_toEndOf="@+id/textView2"
+                app:layout_constraintTop_toBottomOf="@+id/teks_input" />
 
             <Button
                 android:id="@+id/strip"
                 android:layout_width="44dp"
                 android:layout_height="34dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="16dp"
-                android:text="—"
+                android:layout_marginBottom="9dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="9dp"
                 android:onClick="ketik"
+                android:text="—"
                 android:textSize="12sp"
+                app:layout_constraintBottom_toTopOf="@+id/teks_output"
                 app:layout_constraintEnd_toStartOf="@+id/pemisah"
-                app:layout_constraintTop_toBottomOf="@+id/tandapemisah" />
+                app:layout_constraintStart_toEndOf="@+id/titik"
+                app:layout_constraintTop_toBottomOf="@+id/teks_input" />
 
             <Button
                 android:id="@+id/pemisah"
                 android:layout_width="44dp"
                 android:layout_height="34dp"
-                android:layout_marginEnd="20dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="9dp"
                 android:onClick="ketik"
                 android:text="/"
                 android:textSize="12sp"
+                app:layout_constraintEnd_toStartOf="@+id/button6"
+                app:layout_constraintStart_toEndOf="@+id/strip"
+                app:layout_constraintTop_toBottomOf="@+id/teks_input" />
+
+            <Button
+                android:id="@+id/button6"
+                android:layout_width="44dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginLeft="9dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginStart="9dp"
+                android:layout_marginTop="9dp"
+                android:onClick="hapus"
+                android:text="BCK"
+                app:layout_constraintEnd_toStartOf="@+id/button7"
+                app:layout_constraintStart_toEndOf="@+id/pemisah"
+                app:layout_constraintTop_toBottomOf="@+id/teks_input" />
+
+            <Button
+                android:id="@+id/button7"
+                android:layout_width="44dp"
+                android:layout_height="34dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="9dp"
+                android:onClick="hapus"
+                android:text="X"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/tandapemisah" />
+                app:layout_constraintStart_toEndOf="@+id/button6"
+                app:layout_constraintTop_toBottomOf="@+id/teks_input" />
+
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 

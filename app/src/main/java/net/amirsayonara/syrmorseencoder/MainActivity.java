@@ -33,6 +33,15 @@ public class MainActivity extends AppCompatActivity {
         input.setText(input.getText()+b.getText().toString());
     }
 
+    public void hapus(View view) {
+        Button b = (Button) view;
+        EditText input = (EditText) findViewById(R.id.teks_input);
+        if (b.getText().toString().equals("BCK")) {
+            if (input.getText().toString().length()>0)
+                input.setText(input.getText().delete(input.getText().length()-1, input.getText().length()));
+        } else input.setText("");
+    }
+
     public void kerjakan(View view) {
         SyrMorseEncoder morse = new SyrMorseEncoder();
         EditText titik = (EditText) findViewById(R.id.tandatitik);
