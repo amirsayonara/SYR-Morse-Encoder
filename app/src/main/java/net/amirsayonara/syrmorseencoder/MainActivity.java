@@ -20,8 +20,11 @@ public class MainActivity extends AppCompatActivity {
         EditText input = (EditText) findViewById(R.id.teks_input);
         if (this.mode=="encode") {
             this.mode="decode";
-            input.setTextIsSelectable(false);
-        } else this.mode="encode";
+            input.setShowSoftInputOnFocus(false);
+        } else {
+            this.mode="encode";
+            input.setShowSoftInputOnFocus(true);
+        }
         Button btn = (Button) findViewById(R.id.button);
         Button t = (Button) findViewById(R.id.titik);
         Button s = (Button) findViewById(R.id.strip);
