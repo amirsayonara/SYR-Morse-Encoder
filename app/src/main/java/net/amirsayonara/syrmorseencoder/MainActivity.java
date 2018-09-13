@@ -30,7 +30,16 @@ public class MainActivity extends AppCompatActivity {
     public void ketik(View view) {
         Button b = (Button) view;
         EditText input = (EditText) findViewById(R.id.teks_input);
-        input.setText(input.getText()+b.getText().toString());
+        if (b.getText().toString().equals("•")) {
+            EditText t = (EditText) findViewById(R.id.tandatitik);
+            input.setText(input.getText()+t.getText().toString());
+        } else if (b.getText().toString().equals("—")) {
+            EditText s = (EditText) findViewById(R.id.tandastrip);
+            input.setText(input.getText() + s.getText().toString());
+        } else {
+            EditText p = (EditText) findViewById(R.id.tandapemisah);
+            input.setText(input.getText() + p.getText().toString());
+        }
     }
 
     public void hapus(View view) {
