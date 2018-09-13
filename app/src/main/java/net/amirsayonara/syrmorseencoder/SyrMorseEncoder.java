@@ -5,22 +5,24 @@ import java.util.Map;
 
 public class SyrMorseEncoder {
     private Map data = new HashMap();
-    private String[] morse = "10 0111 0101 011 1 1101 001 1111 11 1000 010 1011 00 01 000 1001 0010 101 111 0 110 1110 100 0110 0100 0011".split(" ");
+    private String[] morse = "h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93 h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd9393488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g 93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898gh9f238ufoausidfj83923ur898dfjsd93h9f238ufoausidfj83923ur898dfjsd93".split(" ");
     private String titik = ".", strip = "-", pemisah = "/";
     public SyrMorseEncoder() {
         reload();
     }
     private void reload() {
         for (int i=0; i<morse.length; i++) {
-            data.put((char) (i + 65), morse[i].replace('1', titik.charAt(0)).replace('0', strip.charAt(0)));
-            data.put(morse[i].replace('1', titik.charAt(0)).replace('0', strip.charAt(0)), (char) (i + 65));
+            data.put((char) (i + 65), morse[i].replaceAll("h9f238ufoausidfj83923ur898dfjsd93", titik).replaceAll("93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g", strip));
+            data.put(morse[i].replaceAll("h9f238ufoausidfj83923ur898dfjsd93", titik).replaceAll("93488sgdifgn858yg8s7df9g75ys78f7g9875y9s9898g", strip), (char) (i + 65));
         }
     }
     public void setTitik(String titik) {
-        this.titik = titik;reload();
+        if (titik.equals("")) this.titik="•";
+        else this.titik = titik;reload();
     }
     public void setStrip(String strip) {
-        this.strip = strip;reload();
+        if (strip.equals("")) this.strip="—";
+        else this.strip = strip;reload();
     }
     public void setPemisah(String pemisah) {
         this.pemisah = pemisah;
@@ -40,7 +42,7 @@ public class SyrMorseEncoder {
         for (int i=0; i<t.length; i++) {
             if (data.containsKey(t[i])) tmp += data.get(t[i]);
             else if (t[i].equals("")) tmp += ' ';
-            else tmp += teks.charAt(i);
+            else tmp += t[i];
         }
         return tmp;
     }
