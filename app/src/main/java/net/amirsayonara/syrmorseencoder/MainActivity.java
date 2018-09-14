@@ -2,6 +2,7 @@ package net.amirsayonara.syrmorseencoder;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -43,32 +44,23 @@ public class MainActivity extends AppCompatActivity {
         if (b.getText().toString().equals("•")) {
             EditText t = (EditText) findViewById(R.id.tandatitik);
             input.setText(input.getText().toString().substring(0, cur) + t.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
+            input.setSelection(cur+t.getText().toString().length());
         } else if (b.getText().toString().equals("—")) {
             EditText s = (EditText) findViewById(R.id.tandastrip);
             input.setText(input.getText().toString().substring(0, cur) + s.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
+            input.setSelection(cur+s.getText().toString().length());
         } else {
             EditText p = (EditText) findViewById(R.id.tandapemisah);
             input.setText(input.getText().toString().substring(0, cur) + p.getText().toString() + input.getText().toString().substring(cur, input.getText().toString().length()));
-        } input.setSelection(cur+1);
+            input.setSelection(cur+p.getText().toString().length());
+        }
     }
 
     public void hapus(View view) {
         Button b = (Button) view;
         EditText input = (EditText) findViewById(R.id.teks_input);
         if (b.getText().toString().equals("BCK")) {
-            if (input.getText().toString().length()>0) {
-                int cur = input.getSelectionStart();
-                try{
-                    if (input.getSelectionStart()==input.getSelectionEnd()) {
-                        input.setText(input.getText().delete(cur-1, input.getSelectionEnd()));
-                        input.setSelection(cur-1);
-                    } else {
-                        input.setText(input.getText().delete(cur, input.getSelectionEnd()));
-                        input.setSelection(cur);
-                    }
-                } catch (Exception e) {}
-
-            }
+            input.dispatchKeyEvent(new KeyEvent(KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_DEL));
         } else input.setText("");
     }
 
